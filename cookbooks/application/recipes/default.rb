@@ -42,7 +42,7 @@
     group 'deployer'
     path '/home/deployer/app'
     revision 'chef_demo'
-    repository 'git://github.com/concreteinteractive/rails-example-app.git'
+    repository 'git://github.com/mohitsethi/rails-example-app.git'
     rails do
       bundler true
     end
