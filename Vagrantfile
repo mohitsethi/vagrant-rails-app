@@ -13,11 +13,10 @@ Vagrant::Config.run do |config|
 
   config.vm.provision :chef_solo do |chef|
     chef.cookbooks_path ="cookbooks"
-    chef.roles_path = "roles"
-    chef.data_bags_path = "databags"
-    # ensure the latest packages
-    chef.add_recipe("apt")
-    
+
+    chef.add_recipe "proxy"
+    chef.add_recipe "application"
+
     chef.json.merge!({
         :java => {
           :install_flavor => "sun"
